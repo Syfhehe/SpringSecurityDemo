@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head th:fragment="header">
+	<title>Testing Service</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/testing-web.css}" />
+</head>
+
+<body>
+    <div class="navbar navbar-inverse" th:fragment="header">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li th:classappend="${module == 'home' ? 'active' : ''}">
+                    <a href="#" th:href="@{/}">Home</a>
+                </li>
+                <li th:classappend="${module == 'tasks' ? 'active' : ''}">
+                    <a href="#" th:href="@{/task}">Tasks</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" th:href="@{#}" onclick="console.log('logout ...');$('#form').submit();console.log('logout 2...');return false;">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout
+                    </a>
+                    <form id="form" method="post" th:action="@{/logout}"></form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

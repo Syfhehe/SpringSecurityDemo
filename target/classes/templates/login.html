@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+	</head>
+	<body onload="">
+		<div class="container">
+			<div class="content">
+				<h2>Login with Username and Password</h2>
+
+				<p th:if="${param.logout}" class="alert">You have been logged out</p>
+				<p th:if="${param.error}" class="alert alert-danger">There was an error, please try again</p>
+				
+				
+				<form name="form" th:action="@{/login}" action="/login" method="POST">
+					<div class="form-group">
+					   <label for="exampleInputEmail1">Email address</label>
+					   <input type="email" class="form-control" id="username" name="username" required="required" placeholder="Enter email" />
+					 </div>
+					 <div class="form-group">
+					   <label for="exampleInputPassword1">Password</label>
+					   <input type="password" class="form-control" id="password" name="password" required="required" placeholder="Password" />
+					 </div>
+					<input type="submit" id="login" value="Login" class="btn btn-primary" />
+				</form>
+			</div>
+		</div>
+		 <script type="text/javascript" th:src="@{/js/lib/require.js}"></script>
+	     <script type="text/javascript" th:src="@{/js/require-main.js}" ></script>
+	</body>
+</html>
