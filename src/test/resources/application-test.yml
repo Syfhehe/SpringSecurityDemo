@@ -9,11 +9,10 @@ spring:
     cache: false
 
 spring.datasource.driver-class-name: org.h2.Driver
-spring.datasource.url: jdbc:h2:file:~/.h2/springsecurity;
+spring.datasource.url: jdbc:h2:file:~/.h2/springsecurity-test;
 spring.datasource.username: sa
 spring.datasource.password: 
 spring.datasource.platform: h2
 
 spring.jpa.show-sql: true
 spring.jpa.hibernate.ddl-auto: create-drop
-
